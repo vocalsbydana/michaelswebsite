@@ -269,7 +269,9 @@ a { color: inherit; }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  aspect-ratio: 9 / 16;
+  /* Tall enough to fit Instagram's full embed so it doesn't scroll
+     internally and trap the page scroll. */
+  height: clamp(620px, 50vw, 740px);
 }
 .reel iframe {
   width: 100%;
@@ -277,13 +279,22 @@ a { color: inherit; }
   border: 0;
   display: block;
 }
-.watch-follow {
-  text-align: center;
-  margin: 2.2rem 0 0;
-  color: var(--cream-soft);
+
+/* Horizontal social icons under the videos */
+.watch-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 3rem);
+  margin: 2.5rem 0 0;
 }
-.watch-follow a { color: var(--cream); border-bottom: 1px solid var(--tan); text-decoration: none; }
-.watch-follow a:hover { border-bottom-color: var(--cream); }
+.watch-social a {
+  color: var(--cream);
+  display: inline-flex;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.watch-social a:hover,
+.watch-social a:focus-visible { color: var(--tan); transform: translateY(-3px); }
 
 /* =========================================================
    ABOUT
