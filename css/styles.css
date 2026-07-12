@@ -668,38 +668,6 @@ body.loaded #preloader { opacity: 0; visibility: hidden; }
 }
 
 /* =========================================================
-   CREDITS TICKER (marquee)
-   ========================================================= */
-.ticker {
-  background: var(--teal-deep);
-  overflow: hidden;
-  padding: 0.9rem 0;
-  border-block: 1px solid rgba(242, 226, 186, 0.12);
-}
-.ticker-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.6rem;
-  white-space: nowrap;
-  animation: tickerMove 42s linear infinite;
-  will-change: transform;
-}
-.ticker:hover .ticker-track { animation-play-state: paused; }
-.ticker-item {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-style: italic;
-  font-variation-settings: "opsz" 40, "SOFT" 60, "WONK" 0;
-  color: var(--cream);
-  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
-}
-.ticker-note { color: var(--tan); font-size: 1rem; }
-@keyframes tickerMove {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* =========================================================
    HERO CINEMATICS (Ken Burns + word reveal)
    ========================================================= */
 .hero-media img {
@@ -789,11 +757,9 @@ body.loaded .hero-title .word:nth-child(5) { animation-delay: 0.58s; }
   .scroll-cue span,
   .eq i,
   .string-divider path,
-  .ticker-track,
   .hero-media img,
   .preloader-mark { animation: none !important; }
   /* Ensure content that starts hidden for animation stays visible */
   html.js .hero-title .word,
   html.js .hero-title .dot { opacity: 1; transform: none; }
-  .ticker-track { transform: none; }
 }
