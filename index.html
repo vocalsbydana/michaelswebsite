@@ -20,8 +20,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img src="images/favicon.svg" alt="" class="preloader-mark" width="76" height="76" />
+      <span class="eq eq--lg"><i></i><i></i><i></i><i></i><i></i></span>
+      <p class="preloader-name">Michael The Bassist</p>
+    </div>
+  </div>
+
   <!-- ===================== HEADER ===================== -->
   <header class="site-header" id="top">
     <div class="wrap header-inner">
@@ -49,7 +59,13 @@
              alt="Michael Santos smiling, resting on his upright bass" />
       </div>
       <div class="hero-overlay">
-        <h1 class="hero-title">Bassist <span class="dot">·</span> Performer <span class="dot">·</span> Educator</h1>
+        <h1 class="hero-title">
+          <span class="word">Bassist</span>
+          <span class="dot">·</span>
+          <span class="word">Performer</span>
+          <span class="dot">·</span>
+          <span class="word">Educator</span>
+        </h1>
       </div>
       <a href="#about" class="scroll-cue" aria-label="Scroll to about">
         <span></span>
@@ -58,10 +74,18 @@
 
     <!-- ===================== WATCH ===================== -->
     <section class="watch" id="watch">
+      <div class="string-divider" aria-hidden="true">
+        <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+          <path d="M0,15 Q150,0 300,15 T600,15 T900,15 T1200,15 T1500,15 T1800,15 T2100,15 T2400,15" />
+        </svg>
+      </div>
       <div class="wrap">
         <div class="reveal">
           <p class="eyebrow eyebrow--cream">The Music</p>
-          <h2 class="section-title section-title--cream">See Michael play</h2>
+          <h2 class="section-title section-title--cream">
+            See Michael play
+            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          </h2>
         </div>
 
         <!-- Horizontal YouTube feature -->
@@ -171,6 +195,33 @@
         </blockquote>
       </div>
     </section>
+
+    <!-- ===================== CREDITS TICKER ===================== -->
+    <div class="ticker" aria-label="Selected performance credits">
+      <div class="ticker-track">
+        <span class="ticker-item">Ryan Devlin Quartet</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">The Jazz Kitchen, Indianapolis</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">Mark Buselli Quintet</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">Adam Nussbaum</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">Flying Horse Big Band</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">Back In Time, Tokyo</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">Scott Routenberg Trio</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">The Lilypad, Cambridge</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">Micah Silverstein Ensemble</span><span class="ticker-note">&#9834;</span>
+        <span class="ticker-item">Taste of Summer Festival, Hobart</span><span class="ticker-note">&#9834;</span>
+        <!-- duplicated for a seamless loop -->
+        <span class="ticker-item" aria-hidden="true">Ryan Devlin Quartet</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">The Jazz Kitchen, Indianapolis</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">Mark Buselli Quintet</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">Adam Nussbaum</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">Flying Horse Big Band</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">Back In Time, Tokyo</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">Scott Routenberg Trio</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">The Lilypad, Cambridge</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">Micah Silverstein Ensemble</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+        <span class="ticker-item" aria-hidden="true">Taste of Summer Festival, Hobart</span><span class="ticker-note" aria-hidden="true">&#9834;</span>
+      </div>
+    </div>
 
     <!-- ===================== WORK / HIGHLIGHTS ===================== -->
     <section class="work" id="work">
