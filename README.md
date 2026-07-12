@@ -40,11 +40,8 @@ All text lives in **`index.html`** — open it in any text editor and change the
 words between the tags. Everything you'll likely want to update is marked with
 `<!-- TODO ... -->` comments, including:
 
-- **Contact email** — search for `hello@michaelthebassist.com` and replace it
-  everywhere (there are a few).
-- **Instagram / social links** — the `#` placeholder link in the Contact
-  section.
-- **Contact form** — see section 4 below.
+- **Contact form** — see section 4 below (no email address is shown on the
+  site; the form is the contact channel).
 
 ---
 
