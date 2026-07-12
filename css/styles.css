@@ -324,6 +324,43 @@ a { color: inherit; }
 }
 
 /* =========================================================
+   PERFORMANCE BAND (full-width B&W)
+   ========================================================= */
+.band {
+  position: relative;
+  overflow: hidden;
+}
+.band img {
+  width: 100%;
+  height: clamp(320px, 60vh, 620px);
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  filter: grayscale(100%) contrast(1.05);
+}
+.band-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: linear-gradient(to top, rgba(36, 57, 63, 0.82), rgba(36, 57, 63, 0.15) 55%, rgba(36, 57, 63, 0.35));
+}
+.band-quote {
+  margin: 0;
+  max-width: 20ch;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  color: var(--cream);
+  font-size: clamp(1.8rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================
    WORK / HIGHLIGHTS
    ========================================================= */
 .work {

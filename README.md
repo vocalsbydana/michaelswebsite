@@ -17,18 +17,20 @@ michaelswebsite/
 
 ---
 
-## 1. Add the real photos (only thing left to do)
+## 1. Photos
 
-The site is wired up for two photos. Drop them into the `images/` folder with
-these **exact filenames** and they'll appear automatically — no code changes
-needed. Until then, styled placeholders show in their place.
+The three photos are already in place, web-optimised (compressed from ~19 MB
+down to under 1 MB total for fast loading):
 
-| Filename                          | Which photo                                            |
-| --------------------------------- | ------------------------------------------------------ |
-| `images/michael-hero.jpg`         | The colour portrait on the cream/tan background        |
-| `images/michael-performance.jpg`  | The black-and-white live performance shot              |
+| Filename                         | Where it appears                          |
+| -------------------------------- | ----------------------------------------- |
+| `images/michael-hero.jpg`        | Main hero image at the top                |
+| `images/michael-portrait.jpg`    | About section ("Who is Michael?")         |
+| `images/michael-performance.jpg` | Full-width black-and-white band (quote)   |
 
-Tip: keep each image under ~500 KB for fast loading (resize to ~1600px wide).
+To swap any photo later, replace the file with a same-named JPG (ideally
+~2000px wide, under ~500 KB). The high-resolution originals remain in the
+project's git history if you ever need them.
 
 ---
 

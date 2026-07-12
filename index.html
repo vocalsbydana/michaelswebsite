@@ -45,8 +45,8 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero" id="home">
       <div class="hero-media">
-        <img src="images/michael-hero.jpg" alt="Michael Santos smiling, resting on his upright bass"
-             onerror="this.onerror=null;this.src='images/placeholder-hero.svg'" />
+        <img src="images/michael-hero.jpg" fetchpriority="high"
+             alt="Michael Santos smiling, resting on his upright bass" />
       </div>
       <div class="hero-overlay">
         <h1 class="hero-title">Bassist <span class="dot">·</span> Performer <span class="dot">·</span> Educator</h1>
@@ -149,10 +149,21 @@
         </div>
 
         <aside class="about-media">
-          <img src="images/michael-performance.jpg" alt="Michael Santos performing on upright bass in black and white"
-               onerror="this.onerror=null;this.src='images/placeholder-portrait.svg'" />
-          <figcaption>Live at the piano &mdash; upright bass in hand.</figcaption>
+          <img src="images/michael-portrait.jpg" loading="lazy"
+               alt="Portrait of Michael Santos with his upright bass" />
+          <figcaption>Michael Santos &mdash; upright bassist &amp; educator.</figcaption>
         </aside>
+      </div>
+    </section>
+
+    <!-- ===================== PERFORMANCE BAND ===================== -->
+    <section class="band" aria-label="Michael Santos performing live">
+      <img src="images/michael-performance.jpg" loading="lazy"
+           alt="Michael Santos performing on upright bass beside a grand piano" />
+      <div class="band-overlay">
+        <blockquote class="band-quote">
+          Music should be deeply human, joyful, and engaging.
+        </blockquote>
       </div>
     </section>
 
