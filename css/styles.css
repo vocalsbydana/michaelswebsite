@@ -192,8 +192,14 @@ a { color: inherit; }
   line-height: 0.98;
   letter-spacing: -0.02em;
   margin: 0;
-  max-width: 15ch;
   text-shadow: 0 3px 30px rgba(0, 0, 0, 0.35);
+}
+/* Keep the tagline on a single horizontal line from tablet up */
+@media (min-width: 720px) {
+  .hero-title {
+    white-space: nowrap;
+    font-size: clamp(2.5rem, 5.4vw, 5rem);
+  }
 }
 .hero-title .dot { color: var(--tan); }
 
