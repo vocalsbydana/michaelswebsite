@@ -292,8 +292,10 @@ a { color: inherit; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(2.5rem, 8vw, 5rem);
-  margin: clamp(3rem, 7vw, 5rem) 0 clamp(1rem, 3vw, 2rem);
+  gap: clamp(3rem, 9vw, 6rem);
+  /* Large top margin so the row sits roughly centered in the gap between
+     the reels above and the About section below. */
+  margin: clamp(6rem, 13vw, 11rem) 0 0;
 }
 .watch-social a {
   color: var(--cream);
