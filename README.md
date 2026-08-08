@@ -40,8 +40,8 @@ All text lives in **`index.html`** — open it in any text editor and change the
 words between the tags. Everything you'll likely want to update is marked with
 `<!-- TODO ... -->` comments, including:
 
-- **Contact form** — see section 4 below (no email address is shown on the
-  site; the form is the contact channel).
+- **Contact form** — see section 4 below (no email address appears anywhere on
+  the site or in its source; the form is the contact channel).
 
 ---
 
@@ -65,13 +65,33 @@ licence and wants an exact match, add its `@font-face` and change
 
 ---
 
-## 4. Wire up the contact form (optional)
+## 4. Wire up the contact form
 
-The form currently points at a placeholder. To make it actually send email,
-create a free form endpoint (e.g. **[Formspree](https://formspree.io)**) and
-paste your endpoint URL into the `action="..."` attribute of the `<form>` in
-`index.html`. If you'd rather not use a form at all, delete the `<form>` block —
-the email link next to it still works.
+The contact form posts to **[Formspree](https://formspree.io)**, which forwards
+each submission to Michael's inbox. The destination address lives in the
+Formspree dashboard, **never in this site's code** — so it can't be scraped
+from the page.
+
+To connect it (one-time setup):
+
+1. In the Formspree dashboard, create a form and set its recipient address,
+   then confirm the verification email Formspree sends.
+2. Copy the form's endpoint — it looks like `https://formspree.io/f/abcdwxyz`.
+3. In `index.html`, replace `YOUR_FORM_ID` in the `<form action="...">`
+   attribute with that ID.
+
+To change the destination address later, edit it in the Formspree dashboard —
+no code change needed.
+
+**What's already built in:**
+
+- Messages send without leaving the page, with inline success/error text.
+- A hidden honeypot field (`_gotcha`) silently discards most spam bots.
+- If a visitor has JavaScript disabled, the form still submits normally and
+  Formspree shows its own confirmation page.
+
+Formspree's free tier covers a limited number of submissions per month; check
+your dashboard for the current allowance.
 
 ---
 

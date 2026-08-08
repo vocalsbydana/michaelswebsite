@@ -121,6 +121,88 @@
     });
   }
 
+  // Contact form: submit in the background so the visitor stays on the page.
+  // Without JS the form still posts normally to Formspree, which shows its own
+  // confirmation page — so this is enhancement, not a requirement.
+  var contactForm = document.querySelector(".contact-form");
+  var status = contactForm ? contactForm.querySelector(".form-status") : null;
+
+  if (contactForm && status && window.fetch) {
+    var fieldErrors = contactForm.querySelectorAll(".field-error");
+
+    // Clear any per-field messages left over from a previous attempt
+    function clearFieldErrors() {
+      fieldErrors.forEach(function (el) {
+        el.textContent = "";
+        var input = contactForm.elements[el.getAttribute("data-error-for")];
+        if (input) input.removeAttribute("aria-invalid");
+      });
+    }
+
+    // Formspree returns { errors: [{ field, message }, ...] }. Show each message
+    // beside its input where we can, and return whatever couldn't be placed.
+    function showFieldErrors(errors) {
+      var unplaced = [];
+      errors.forEach(function (err) {
+        var slot = err.field
+          ? contactForm.querySelector('[data-error-for="' + err.field + '"]')
+          : null;
+        if (slot) {
+          slot.textContent = err.message;
+          var input = contactForm.elements[err.field];
+          if (input) input.setAttribute("aria-invalid", "true");
+        } else {
+          unplaced.push(err.message);
+        }
+      });
+      return unplaced;
+    }
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var button = contactForm.querySelector("button[type=submit]");
+      button.disabled = true;
+      clearFieldErrors();
+      status.className = "form-status is-pending";
+      status.textContent = "Sending…";
+
+      fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            contactForm.reset();
+            status.className = "form-status is-ok";
+            status.textContent =
+              "Thanks — your message is on its way. Michael will be in touch soon.";
+            return;
+          }
+          return res.json().then(function (data) {
+            var errors = (data && data.errors) || [];
+            var unplaced = showFieldErrors(errors);
+            status.className = "form-status is-error";
+            status.textContent = unplaced.length
+              ? unplaced.join(" ")
+              : errors.length
+                ? "Please check the highlighted fields and try again."
+                : "Something went wrong. Please try again, or reach out on Instagram.";
+          });
+        })
+        .catch(function () {
+          status.className = "form-status is-error";
+          status.textContent =
+            "Couldn't reach the server. Please check your connection and try again, " +
+            "or reach out on Instagram.";
+        })
+        .finally(function () {
+          button.disabled = false;
+        });
+    });
+  }
+
   // Scroll-reveal for elements marked .reveal
   var revealEls = document.querySelectorAll(".reveal");
 

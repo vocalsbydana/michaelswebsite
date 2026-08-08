@@ -525,6 +525,40 @@ a { color: inherit; }
 .form-note { font-size: 0.85rem; color: var(--ink-soft); margin: 1rem 0 0; }
 .form-note a { color: var(--teal); }
 
+/* Honeypot field — off-screen for people, still reachable by bots */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+.form-status {
+  font-size: 0.9rem;
+  margin: 1rem 0 0;
+  min-height: 1.2em;
+}
+.form-status:empty { margin: 0; }
+.form-status.is-pending { color: var(--ink-soft); }
+.form-status.is-ok { color: var(--teal); font-weight: 600; }
+.form-status.is-error { color: #a3341f; }
+
+.field-error {
+  font-size: 0.85rem;
+  color: #a3341f;
+  margin: 0.35rem 0 0;
+}
+.field-error:empty { display: none; }
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] { border-color: #a3341f; }
+.field input[aria-invalid="true"]:focus,
+.field textarea[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(163, 52, 31, 0.15);
+}
+
 /* =========================================================
    FOOTER
    ========================================================= */
