@@ -115,6 +115,16 @@ a { color: inherit; }
   text-decoration: none;
   letter-spacing: -0.01em;
   line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+/* The bass mark is roughly 1:2.25, so it is always sized by height. */
+.wordmark-mark {
+  height: clamp(2.1rem, 5vw, 2.8rem);
+  width: auto;
+  display: block;
+  flex: none;
 }
 .wordmark .sep { opacity: 0.55; font-weight: 400; }
 
@@ -581,6 +591,15 @@ a { color: inherit; }
   font-variation-settings: "opsz" 60, "SOFT" 60, "WONK" 1;
   color: var(--cream);
   font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.footer-mark-img {
+  height: 2.2rem;
+  width: auto;
+  display: block;
+  flex: none;
 }
 .footer-mark .sep { opacity: 0.5; }
 .footer-nav { display: flex; gap: 1.4rem; }
@@ -617,8 +636,8 @@ body.loaded #preloader { opacity: 0; visibility: hidden; }
   gap: 1.4rem;
 }
 .preloader-mark {
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+  height: clamp(7rem, 22vw, 10rem);
+  width: auto;
   animation: pulseMark 1.6s ease-in-out infinite;
 }
 .preloader-name {
